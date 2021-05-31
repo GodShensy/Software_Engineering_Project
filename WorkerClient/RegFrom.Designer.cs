@@ -217,7 +217,7 @@ namespace WorkerClient
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(204, 274);
             this.richTextBox1.TabIndex = 17;
-            this.richTextBox1.Text = "提交基本信息申请注册\n管理员会再审核并分配账号后同志你";
+            this.richTextBox1.Text = "提交基本信息申请注册\n管理员会再审核并分配账号后通知你参与工作";
             // 
             // button_push_data
             // 

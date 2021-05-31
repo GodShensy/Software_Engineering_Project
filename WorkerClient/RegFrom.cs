@@ -40,7 +40,7 @@ namespace WorkerClient
             String Addr = this.textBox_addr.Text;
             int edu = this.comboBox_edu.SelectedIndex;
             String tel = this.textBox_tel.Text;
-            workerRegInf regInf = new workerRegInf();
+            WorkerRegInf regInf = new WorkerRegInf();
             regInf.WorkerRegName = inputName;
             regInf.WorkerRegPassword = inputPassword;
             regInf.WorkerRegSex = sex;
@@ -49,7 +49,7 @@ namespace WorkerClient
             regInf.WorkerRegAddr = Addr;
             regInf.WorkerRegEdu = edu;
             regInf.WorkerRegTel = tel;
-            workerRegService service = new workerRegService();
+            WorkerRegService service = new WorkerRegService();
             service.insertWorkerInf(regInf);
             MessageBox.Show("提交完成!");
         }

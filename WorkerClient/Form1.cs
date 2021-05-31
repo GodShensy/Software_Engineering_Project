@@ -42,7 +42,7 @@ namespace WorkerClient
                 MessageBox.Show("请输入密码");
             }
 
-            workerService service = new workerService();
+            WorkerService service = new WorkerService();
 
             if(!service.doWorkerSelect(uid,upassword))
             {
