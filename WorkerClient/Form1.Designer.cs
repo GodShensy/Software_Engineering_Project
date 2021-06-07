@@ -32,9 +32,9 @@ namespace WorkerClient
             this.label_userid = new System.Windows.Forms.Label();
             this.label_password = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.textBox_uid = new System.Windows.Forms.TextBox();
             this.textBox_upassword = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_userid
@@ -65,16 +65,6 @@ namespace WorkerClient
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(235, 171);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "注册";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // textBox_uid
             // 
             this.textBox_uid.Location = new System.Drawing.Point(110, 44);
@@ -89,11 +79,21 @@ namespace WorkerClient
             this.textBox_upassword.Size = new System.Drawing.Size(200, 23);
             this.textBox_upassword.TabIndex = 4;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(235, 171);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "退出";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 259);
+            this.ClientSize = new System.Drawing.Size(390, 258);
             this.Controls.Add(this.textBox_upassword);
             this.Controls.Add(this.textBox_uid);
             this.Controls.Add(this.button2);
@@ -112,10 +112,10 @@ namespace WorkerClient
         private System.Windows.Forms.Label label_userid;
         private System.Windows.Forms.Label label_password;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox_uid;
         private System.Windows.Forms.TextBox textBox_upassword;
         private System.Windows.Forms.Label label_userId;
+        private System.Windows.Forms.Button button2;
     }
 }
 

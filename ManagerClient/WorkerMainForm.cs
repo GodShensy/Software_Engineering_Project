@@ -211,7 +211,7 @@ namespace ManagerClient
                 inf.WorkerEdu = ls[0].WorkerEdu;
                 inf.WorkerLv = ls[0].WorkerLv;
                 inf.WorkerTime = ls[0].WorkerTime;
-                inf.WorkerNumber = ls[0].WorkerNumber;
+                inf. = ls[0].WorkerNumber;
                 inf.WorkerNumber = ls[0].WorkerNumber;
                 inf.WorkerNumber = ls[0].WorkerNumber;
             }

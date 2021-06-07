@@ -15,14 +15,12 @@ namespace WorkerClient
 {
     public partial class Form1 : Form
     {
-        Form regForm = null;
-        Form mainForm = null;
-
+        MainFrom mainForm = null;
+        String uid = "";
+        String upassword = "";
         public Form1()
         {
             InitializeComponent();
-            regForm = new RegFrom(this);
-            regForm.Hide();
             mainForm = new MainFrom(this);
             mainForm.Hide();
         }
@@ -30,8 +28,8 @@ namespace WorkerClient
         private void button1_Click(object sender, EventArgs e)
         {
             // 登陆按钮
-            String uid = this.textBox_uid.Text;
-            String upassword = this.textBox_upassword.Text;
+            uid = this.textBox_uid.Text;
+            upassword = this.textBox_upassword.Text;
             if(uid.Equals(""))
             {
                 MessageBox.Show("请输入用户id");
@@ -52,13 +50,14 @@ namespace WorkerClient
             // 跳转到主窗口
             MessageBox.Show("登陆成功");
             this.Hide();
+            mainForm.resetButton();
+            mainForm.setIdAndPassword(uid, upassword);
             mainForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            regForm.Show();
+            Application.Exit();
         }
     }
 }
