@@ -115,6 +115,7 @@ namespace WorkerClient.src.workers
                     e.WorkerHomeAddr = reader.GetString("workerHomeAddr");
                     e.WorkerEdu = reader.GetInt32("workerEdu");
                     e.WorkerLv = reader.GetInt32("workerLv");
+                    e.WorkerAdd = reader.GetString("workerAddr");
                     e.WorkerTime = reader.GetInt32("workerTime");
                     e.WorkerJoinTime = reader.GetDateTime("workerJoinTime").ToString();
                     e.WorkerBaseRec = reader.GetFloat("workerBaseRec");

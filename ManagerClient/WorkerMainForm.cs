@@ -1,4 +1,5 @@
-﻿using Sunny.UI;
+﻿using DataBaseTest.DateBaseAccess;
+using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +36,40 @@ namespace ManagerClient
             workerId = managerId;
             workerPassword = password;
             this.uiCheckBoxGroup1.Text = "用户ID:" + workerId;
+            List<WorkerInf> ls = null;
+            WorkerService service = new WorkerService();
+            String sql = "select * from workertab where workerNumber = @pair0;";
+            String[] parms =
+            {
+                workerId
+            };
+            ls = service.selelectWorkerInf(sql, parms);
+            if (ls.Count < 0)
+            {
+                MessageBox.Show("无数据");
+            }
+            else
+            {
+                inf = new WorkerInf();
+                inf.Id = ls[0].Id;
+                inf.WorkerNumber = ls[0].WorkerNumber;
+                inf.WorkerPassword = ls[0].WorkerPassword;
+                inf.WorkerName = ls[0].WorkerName;
+                inf.WorkerSex = ls[0].WorkerSex;
+                inf.WorkerBirth = ls[0].WorkerBirth;
+                inf.WorkerHomeAddr = ls[0].WorkerHomeAddr;
+                inf.WorkerEdu = ls[0].WorkerEdu;
+                inf.WorkerLv = ls[0].WorkerLv;
+                inf.WorkerTime = ls[0].WorkerTime;
+                inf.WorkerJoinTime = ls[0].WorkerJoinTime;
+                inf.WorkerBaseRec = ls[0].WorkerBaseRec;
+                inf.WorkerAdd = ls[0].WorkerAdd;
+                inf.WorkerTel = ls[0].WorkerTel;
+                uiTextBox_userName.Text = inf.WorkerName;
+                uiTextBox_userAddr.Text = inf.WorkerAdd;
+                uiTextBox_userTel.Text = inf.WorkerTel;
+                uiDatePicker_userBirth.Text = inf.WorkerBirth;
+            }
         }
 
         private void WorkerMainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -186,34 +221,30 @@ namespace ManagerClient
 
         private void uiButton_check_Click(object sender, EventArgs e)
         {
-            List<WorkerInf> ls = null;
-            WorkerService service = new WorkerService();
-            String sql = "select * from workertab where workerNumber = @pair0;";
-            String[] parms =
-            {
+            String workerName = this.uiTextBox_userName.Text;
+            String workerAddr = this.uiTextBox_userAddr.Text;
+            String workerTel = this.uiTextBox_userTel.Text;
+            String workerBirth = this.uiDatePicker_userBirth.Text;
+            String sql = "update workertab set" +
+                         " workerName = @pair0 ," +
+                         " workerAddr = @pair1 ," +
+                         " workerTel = @pair2 , " +
+                         " workerBirth = @pair3 " +
+                         " where workerNumber = @pair4;";
+            String[] parm = { 
+                workerName,
+                workerAddr,
+                workerTel,
+                workerBirth,
                 workerId
             };
-            ls = service.selelectWorkerInf(sql, parms);
-            if(ls.Count < 0)
+           if(MysqlConnectorHelper.exectUID(sql, parm) > 0)
             {
-                MessageBox.Show("无数据");
+                MessageBox.Show("修改成功");
             }
             else
             {
-                inf = new WorkerInf();
-                inf.Id = ls[0].Id;
-                inf.WorkerNumber = ls[0].WorkerNumber;
-                inf.WorkerPassword = ls[0].WorkerPassword;
-                inf.WorkerName = ls[0].WorkerName;
-                inf.WorkerSex = ls[0].WorkerSex;
-                inf.WorkerBirth = ls[0].WorkerBirth;
-                inf.WorkerHomeAddr = ls[0].WorkerHomeAddr;
-                inf.WorkerEdu = ls[0].WorkerEdu;
-                inf.WorkerLv = ls[0].WorkerLv;
-                inf.WorkerTime = ls[0].WorkerTime;
-                inf. = ls[0].WorkerNumber;
-                inf.WorkerNumber = ls[0].WorkerNumber;
-                inf.WorkerNumber = ls[0].WorkerNumber;
+                MessageBox.Show("修改失败");
             }
         }
     }

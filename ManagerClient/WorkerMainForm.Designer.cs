@@ -53,16 +53,18 @@ namespace ManagerClient
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.uiCheckBoxGroup1 = new Sunny.UI.UICheckBoxGroup();
+            this.uiButton_check = new Sunny.UI.UIButton();
+            this.uiDatePicker_userBirth = new Sunny.UI.UIDatePicker();
+            this.uiTextBox_userTel = new Sunny.UI.UITextBox();
+            this.uiTextBox_userAddr = new Sunny.UI.UITextBox();
+            this.uiTextBox_userName = new Sunny.UI.UITextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.uiTextBox_userName = new Sunny.UI.UITextBox();
-            this.uiTextBox_userAddr = new Sunny.UI.UITextBox();
-            this.uiTextBox_userTel = new Sunny.UI.UITextBox();
-            this.uiDatePicker_userBirth = new Sunny.UI.UIDatePicker();
-            this.uiButton_check = new Sunny.UI.UIButton();
+            this.uiScrollingText1 = new Sunny.UI.UIScrollingText();
+            this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.uiTabControlMenu1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.uiGroupBox2.SuspendLayout();
@@ -92,6 +94,8 @@ namespace ManagerClient
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.uiTextBox1);
+            this.tabPage1.Controls.Add(this.uiScrollingText1);
             this.tabPage1.Controls.Add(this.uiButton_unsign);
             this.tabPage1.Controls.Add(this.uiButton_sign);
             this.tabPage1.Controls.Add(this.uiGroupBox2);
@@ -106,7 +110,7 @@ namespace ManagerClient
             // 
             this.uiButton_unsign.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiButton_unsign.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiButton_unsign.Location = new System.Drawing.Point(216, 314);
+            this.uiButton_unsign.Location = new System.Drawing.Point(252, 278);
             this.uiButton_unsign.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton_unsign.Name = "uiButton_unsign";
             this.uiButton_unsign.Size = new System.Drawing.Size(100, 35);
@@ -118,7 +122,7 @@ namespace ManagerClient
             // 
             this.uiButton_sign.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiButton_sign.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiButton_sign.Location = new System.Drawing.Point(67, 314);
+            this.uiButton_sign.Location = new System.Drawing.Point(59, 278);
             this.uiButton_sign.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton_sign.Name = "uiButton_sign";
             this.uiButton_sign.Size = new System.Drawing.Size(100, 35);
@@ -131,12 +135,12 @@ namespace ManagerClient
             this.uiGroupBox2.Controls.Add(this.uiLabel_longData);
             this.uiGroupBox2.Controls.Add(this.uiLabel_shortData);
             this.uiGroupBox2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiGroupBox2.Location = new System.Drawing.Point(31, 36);
+            this.uiGroupBox2.Location = new System.Drawing.Point(32, 46);
             this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox2.Name = "uiGroupBox2";
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
-            this.uiGroupBox2.Size = new System.Drawing.Size(378, 143);
+            this.uiGroupBox2.Size = new System.Drawing.Size(339, 164);
             this.uiGroupBox2.TabIndex = 0;
             this.uiGroupBox2.Text = "系统时间";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -378,6 +382,87 @@ namespace ManagerClient
             this.uiCheckBoxGroup1.Text = "用户信息";
             this.uiCheckBoxGroup1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // uiButton_check
+            // 
+            this.uiButton_check.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton_check.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiButton_check.Location = new System.Drawing.Point(248, 300);
+            this.uiButton_check.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton_check.Name = "uiButton_check";
+            this.uiButton_check.Size = new System.Drawing.Size(100, 35);
+            this.uiButton_check.TabIndex = 5;
+            this.uiButton_check.Text = "确定";
+            this.uiButton_check.Click += new System.EventHandler(this.uiButton_check_Click);
+            // 
+            // uiDatePicker_userBirth
+            // 
+            this.uiDatePicker_userBirth.FillColor = System.Drawing.Color.White;
+            this.uiDatePicker_userBirth.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiDatePicker_userBirth.Location = new System.Drawing.Point(221, 165);
+            this.uiDatePicker_userBirth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiDatePicker_userBirth.MaxLength = 10;
+            this.uiDatePicker_userBirth.MinimumSize = new System.Drawing.Size(63, 0);
+            this.uiDatePicker_userBirth.Name = "uiDatePicker_userBirth";
+            this.uiDatePicker_userBirth.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.uiDatePicker_userBirth.Size = new System.Drawing.Size(223, 29);
+            this.uiDatePicker_userBirth.SymbolDropDown = 61555;
+            this.uiDatePicker_userBirth.SymbolNormal = 61555;
+            this.uiDatePicker_userBirth.TabIndex = 4;
+            this.uiDatePicker_userBirth.Text = "2021-06-07";
+            this.uiDatePicker_userBirth.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiDatePicker_userBirth.Value = new System.DateTime(2021, 6, 7, 21, 34, 44, 823);
+            // 
+            // uiTextBox_userTel
+            // 
+            this.uiTextBox_userTel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox_userTel.FillColor = System.Drawing.Color.White;
+            this.uiTextBox_userTel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiTextBox_userTel.Location = new System.Drawing.Point(221, 210);
+            this.uiTextBox_userTel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox_userTel.Maximum = 2147483647D;
+            this.uiTextBox_userTel.Minimum = -2147483648D;
+            this.uiTextBox_userTel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiTextBox_userTel.Name = "uiTextBox_userTel";
+            this.uiTextBox_userTel.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox_userTel.Size = new System.Drawing.Size(223, 29);
+            this.uiTextBox_userTel.TabIndex = 3;
+            this.uiTextBox_userTel.Text = "uiTextBox3";
+            this.uiTextBox_userTel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiTextBox_userAddr
+            // 
+            this.uiTextBox_userAddr.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox_userAddr.FillColor = System.Drawing.Color.White;
+            this.uiTextBox_userAddr.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiTextBox_userAddr.Location = new System.Drawing.Point(221, 113);
+            this.uiTextBox_userAddr.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox_userAddr.Maximum = 2147483647D;
+            this.uiTextBox_userAddr.Minimum = -2147483648D;
+            this.uiTextBox_userAddr.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiTextBox_userAddr.Name = "uiTextBox_userAddr";
+            this.uiTextBox_userAddr.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox_userAddr.Size = new System.Drawing.Size(223, 29);
+            this.uiTextBox_userAddr.TabIndex = 2;
+            this.uiTextBox_userAddr.Text = "uiTextBox2";
+            this.uiTextBox_userAddr.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiTextBox_userName
+            // 
+            this.uiTextBox_userName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox_userName.FillColor = System.Drawing.Color.White;
+            this.uiTextBox_userName.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiTextBox_userName.Location = new System.Drawing.Point(221, 75);
+            this.uiTextBox_userName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox_userName.Maximum = 2147483647D;
+            this.uiTextBox_userName.Minimum = -2147483648D;
+            this.uiTextBox_userName.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiTextBox_userName.Name = "uiTextBox_userName";
+            this.uiTextBox_userName.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox_userName.Size = new System.Drawing.Size(223, 29);
+            this.uiTextBox_userName.TabIndex = 1;
+            this.uiTextBox_userName.Text = "uiTextBox1";
+            this.uiTextBox_userName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -424,86 +509,35 @@ namespace ManagerClient
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // uiTextBox_userName
+            // uiScrollingText1
             // 
-            this.uiTextBox_userName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox_userName.FillColor = System.Drawing.Color.White;
-            this.uiTextBox_userName.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiTextBox_userName.Location = new System.Drawing.Point(221, 75);
-            this.uiTextBox_userName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox_userName.Maximum = 2147483647D;
-            this.uiTextBox_userName.Minimum = -2147483648D;
-            this.uiTextBox_userName.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiTextBox_userName.Name = "uiTextBox_userName";
-            this.uiTextBox_userName.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBox_userName.Size = new System.Drawing.Size(223, 29);
-            this.uiTextBox_userName.TabIndex = 1;
-            this.uiTextBox_userName.Text = "uiTextBox1";
-            this.uiTextBox_userName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiScrollingText1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.uiScrollingText1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiScrollingText1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.uiScrollingText1.Location = new System.Drawing.Point(32, 5);
+            this.uiScrollingText1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiScrollingText1.Name = "uiScrollingText1";
+            this.uiScrollingText1.Size = new System.Drawing.Size(619, 33);
+            this.uiScrollingText1.TabIndex = 3;
+            this.uiScrollingText1.Text = "记得签到！！！！！";
             // 
-            // uiTextBox_userAddr
+            // uiTextBox1
             // 
-            this.uiTextBox_userAddr.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox_userAddr.FillColor = System.Drawing.Color.White;
-            this.uiTextBox_userAddr.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiTextBox_userAddr.Location = new System.Drawing.Point(221, 113);
-            this.uiTextBox_userAddr.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox_userAddr.Maximum = 2147483647D;
-            this.uiTextBox_userAddr.Minimum = -2147483648D;
-            this.uiTextBox_userAddr.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiTextBox_userAddr.Name = "uiTextBox_userAddr";
-            this.uiTextBox_userAddr.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBox_userAddr.Size = new System.Drawing.Size(223, 29);
-            this.uiTextBox_userAddr.TabIndex = 2;
-            this.uiTextBox_userAddr.Text = "uiTextBox2";
-            this.uiTextBox_userAddr.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiTextBox_userTel
-            // 
-            this.uiTextBox_userTel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox_userTel.FillColor = System.Drawing.Color.White;
-            this.uiTextBox_userTel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiTextBox_userTel.Location = new System.Drawing.Point(221, 210);
-            this.uiTextBox_userTel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox_userTel.Maximum = 2147483647D;
-            this.uiTextBox_userTel.Minimum = -2147483648D;
-            this.uiTextBox_userTel.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiTextBox_userTel.Name = "uiTextBox_userTel";
-            this.uiTextBox_userTel.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBox_userTel.Size = new System.Drawing.Size(223, 29);
-            this.uiTextBox_userTel.TabIndex = 3;
-            this.uiTextBox_userTel.Text = "uiTextBox3";
-            this.uiTextBox_userTel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiDatePicker_userBirth
-            // 
-            this.uiDatePicker_userBirth.FillColor = System.Drawing.Color.White;
-            this.uiDatePicker_userBirth.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiDatePicker_userBirth.Location = new System.Drawing.Point(221, 165);
-            this.uiDatePicker_userBirth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiDatePicker_userBirth.MaxLength = 10;
-            this.uiDatePicker_userBirth.MinimumSize = new System.Drawing.Size(63, 0);
-            this.uiDatePicker_userBirth.Name = "uiDatePicker_userBirth";
-            this.uiDatePicker_userBirth.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.uiDatePicker_userBirth.Size = new System.Drawing.Size(223, 29);
-            this.uiDatePicker_userBirth.SymbolDropDown = 61555;
-            this.uiDatePicker_userBirth.SymbolNormal = 61555;
-            this.uiDatePicker_userBirth.TabIndex = 4;
-            this.uiDatePicker_userBirth.Text = "uiDatePicker1";
-            this.uiDatePicker_userBirth.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiDatePicker_userBirth.Value = new System.DateTime(2021, 6, 7, 21, 34, 44, 823);
-            // 
-            // uiButton_check
-            // 
-            this.uiButton_check.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton_check.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiButton_check.Location = new System.Drawing.Point(248, 300);
-            this.uiButton_check.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton_check.Name = "uiButton_check";
-            this.uiButton_check.Size = new System.Drawing.Size(100, 35);
-            this.uiButton_check.TabIndex = 5;
-            this.uiButton_check.Text = "确定";
-            this.uiButton_check.Click += new System.EventHandler(this.uiButton_check_Click);
+            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox1.FillColor = System.Drawing.Color.White;
+            this.uiTextBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiTextBox1.Location = new System.Drawing.Point(449, 56);
+            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox1.Maximum = 2147483647D;
+            this.uiTextBox1.Minimum = -2147483648D;
+            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiTextBox1.Multiline = true;
+            this.uiTextBox1.Name = "uiTextBox1";
+            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox1.Size = new System.Drawing.Size(150, 257);
+            this.uiTextBox1.TabIndex = 4;
+            this.uiTextBox1.Text = "请及时签到，如果要请假，请点击请假按钮输入请假理由";
+            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // WorkerMainForm
             // 
@@ -562,5 +596,7 @@ namespace ManagerClient
         private Sunny.UI.UITextBox uiTextBox_userName;
         private Sunny.UI.UIDatePicker uiDatePicker_userBirth;
         private Sunny.UI.UIButton uiButton_check;
+        private Sunny.UI.UIScrollingText uiScrollingText1;
+        private Sunny.UI.UITextBox uiTextBox1;
     }
 }

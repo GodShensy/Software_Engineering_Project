@@ -63,7 +63,7 @@ namespace WorkerClient.src.workers
         /** 工龄 */
         public int WorkerTime { get => workerTime; set => workerTime = value = value == null ? 0 : value; }
         /** 员工入职时间 */
-        public string WorkerJoinTime { get => workerJoinTime; set => workerJoinTime = String.IsNullOrEmpty(value) ? "null" : value; }
+        public string WorkerJoinTime { get => workerJoinTime; set => workerJoinTime = value; }
         /** 员工基本工资 */
         public float WorkerBaseRec { get => workerBaseRec; set => workerBaseRec = value == null ? -1 : value; }
         /** 员工住址 */
