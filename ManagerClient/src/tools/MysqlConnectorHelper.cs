@@ -10,7 +10,7 @@ namespace DataBaseTest.DateBaseAccess
         public static String port = "3306";
         public static String user = "root";
         public static String password = "123456";
-        public static String datebase = "mywork";
+        public static String datebase = "myplusc";
         public static String charset = "utf-8";
 
         public static MySqlConnection getConn()

@@ -30,94 +30,116 @@ namespace ManagerClient
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.资料管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.待遇管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.打印ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_info_btn = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_rec = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_btn_reset_password = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_signManage = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_btn_quit = new System.Windows.Forms.ToolStripMenuItem();
             this.panelForm = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Font = new System.Drawing.Font("幼圆", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.资料管理ToolStripMenuItem,
-            this.待遇管理ToolStripMenuItem,
-            this.打印ToolStripMenuItem,
+            this.menu_info_btn,
+            this.ToolStripMenuItem_rec,
             this.menu_btn_reset_password,
+            this.toolStripMenuItem_signManage,
             this.menu_btn_quit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 25);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
+            this.menuStrip1.Size = new System.Drawing.Size(816, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // 资料管理ToolStripMenuItem
+            // menu_info_btn
             // 
-            this.资料管理ToolStripMenuItem.Name = "资料管理ToolStripMenuItem";
-            this.资料管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.资料管理ToolStripMenuItem.Text = "资料管理";
+            this.menu_info_btn.Name = "menu_info_btn";
+            this.menu_info_btn.Size = new System.Drawing.Size(65, 24);
+            this.menu_info_btn.Text = "资料管理";
+            this.menu_info_btn.Click += new System.EventHandler(this.menu_info_btn_Click);
             // 
-            // 待遇管理ToolStripMenuItem
+            // ToolStripMenuItem_rec
             // 
-            this.待遇管理ToolStripMenuItem.Name = "待遇管理ToolStripMenuItem";
-            this.待遇管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.待遇管理ToolStripMenuItem.Text = "待遇管理";
-            // 
-            // 打印ToolStripMenuItem
-            // 
-            this.打印ToolStripMenuItem.Name = "打印ToolStripMenuItem";
-            this.打印ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.打印ToolStripMenuItem.Text = "打印";
+            this.ToolStripMenuItem_rec.Name = "ToolStripMenuItem_rec";
+            this.ToolStripMenuItem_rec.Size = new System.Drawing.Size(65, 24);
+            this.ToolStripMenuItem_rec.Text = "待遇管理";
+            this.ToolStripMenuItem_rec.Click += new System.EventHandler(this.ToolStripMenuItem_rec_Click);
             // 
             // menu_btn_reset_password
             // 
             this.menu_btn_reset_password.Name = "menu_btn_reset_password";
-            this.menu_btn_reset_password.Size = new System.Drawing.Size(104, 21);
+            this.menu_btn_reset_password.Size = new System.Drawing.Size(101, 24);
             this.menu_btn_reset_password.Text = "修改管理员密码";
             this.menu_btn_reset_password.Click += new System.EventHandler(this.menu_btn_reset_password_Click);
+            // 
+            // toolStripMenuItem_signManage
+            // 
+            this.toolStripMenuItem_signManage.Name = "toolStripMenuItem_signManage";
+            this.toolStripMenuItem_signManage.Size = new System.Drawing.Size(65, 24);
+            this.toolStripMenuItem_signManage.Text = "签到管理";
+            this.toolStripMenuItem_signManage.Click += new System.EventHandler(this.toolStripMenuItem_signManage_Click);
             // 
             // menu_btn_quit
             // 
             this.menu_btn_quit.Name = "menu_btn_quit";
-            this.menu_btn_quit.Size = new System.Drawing.Size(44, 21);
+            this.menu_btn_quit.Size = new System.Drawing.Size(41, 24);
             this.menu_btn_quit.Text = "退出";
             this.menu_btn_quit.Click += new System.EventHandler(this.menu_btn_quit_Click);
             // 
             // panelForm
             // 
-            this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelForm.Location = new System.Drawing.Point(0, 25);
+            this.panelForm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelForm.Location = new System.Drawing.Point(0, 30);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(800, 425);
+            this.panelForm.Size = new System.Drawing.Size(816, 465);
             this.panelForm.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.menuStrip1);
+            this.panel1.Controls.Add(this.panelForm);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(816, 495);
+            this.panel1.TabIndex = 2;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelForm);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(816, 530);
+            this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(816, 530);
+            this.MinimumSize = new System.Drawing.Size(816, 530);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 资料管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 待遇管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 打印ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menu_info_btn;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_rec;
         private System.Windows.Forms.ToolStripMenuItem menu_btn_reset_password;
         private System.Windows.Forms.ToolStripMenuItem menu_btn_quit;
         private System.Windows.Forms.Panel panelForm;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_signManage;
+        private System.Windows.Forms.Panel panel1;
     }
 }

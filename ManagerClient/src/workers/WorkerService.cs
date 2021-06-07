@@ -8,7 +8,7 @@ namespace WorkerClient.src.workers
 {
     class WorkerService
     {
-        public Boolean doWorkerSelect(String userID,String userPassword)
+        public Boolean doWorkerSelect(String userID, String userPassword)
         {
             // 查找一个
             String sql = "";
@@ -51,6 +51,7 @@ namespace WorkerClient.src.workers
             return false;
         }
 
+
         public int insertWorkerInf(WorkerInf inf)
         {
             // 插入一个
@@ -58,12 +59,13 @@ namespace WorkerClient.src.workers
             {
                 inf.WorkerNumber,
                 inf.WorkerPassword,
+                inf.WorkerName,
                 inf.WorkerSex.ToString(),
                 inf.WorkerBirth,
                 inf.WorkerHomeAddr,
-                inf.WorkerEdu,
+                inf.WorkerEdu.ToString(),
                 inf.WorkerLv.ToString(),
-                inf.WorkerTime,
+                inf.WorkerTime.ToString(),
                 inf.WorkerJoinTime,
                 inf.WorkerBaseRec.ToString(),
                 inf.WorkerAdd,
@@ -88,7 +90,7 @@ namespace WorkerClient.src.workers
             return MysqlConnectorHelper.exectUID(sql, parm);
         }
 
-        public List<WorkerInf> selelectWorkerInf(String sql , String[] parms)
+        public List<WorkerInf> selelectWorkerInf(String sql, String[] parms)
         {
             MySqlConnection mycon = MysqlConnectorHelper.getConn();
             List<WorkerInf> rs = new List<WorkerInf>();
@@ -107,13 +109,13 @@ namespace WorkerClient.src.workers
                 {
                     e.WorkerNumber = reader.GetString("workerNumber");
                     e.WorkerPassword = reader.GetString("workerPassword");
-                    e.WorderName = reader.GetString("workerName");
+                    e.WorkerName = reader.GetString("workerName");
                     e.WorkerSex = reader.GetInt32("workerSex");
                     e.WorkerBirth = reader.GetDateTime("workerBirth").ToString();
                     e.WorkerHomeAddr = reader.GetString("workerHomeAddr");
-                    e.WorkerEdu = reader.GetString("workerEdu");
+                    e.WorkerEdu = reader.GetInt32("workerEdu");
                     e.WorkerLv = reader.GetInt32("workerLv");
-                    e.WorkerTime = reader.GetDateTime("workerTime").ToString();
+                    e.WorkerTime = reader.GetInt32("workerTime");
                     e.WorkerJoinTime = reader.GetDateTime("workerJoinTime").ToString();
                     e.WorkerBaseRec = reader.GetFloat("workerBaseRec");
                     e.WorkerHomeAddr = reader.GetString("workerAddr");
@@ -130,6 +132,38 @@ namespace WorkerClient.src.workers
                 mycon.Close();
             }
             return rs;
+        }
+
+        public Boolean doPasswordChange(String password, String id)
+        {
+            String sql = "update workertab set workerPassword = @pair0 where workerNumber = @pair1;";
+            String[] parm ={
+                password,
+                id
+            };
+            if (MysqlConnectorHelper.exectUID(sql, parm) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public int doWorkerInfoChangeByItem(String itemName , String value , String userId)
+        {
+            // 插入一个
+            String[] parm =
+            {
+                value,
+                userId
+            };
+            String sql = "update workertab set " + itemName +" = @pair0 where workerNumber = @pair1";
+            return MysqlConnectorHelper.exectUID(sql, parm);
+        }
+
+        public int workerClear()
+        {
+            String sql = "";
+            return 0;
         }
     }
 }

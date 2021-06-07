@@ -1,4 +1,5 @@
 ﻿using ManagerClient.src.managers;
+using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ManagerClient
 {
-    public partial class PasswordForm : Form
+    public partial class PasswordForm : UIForm
     {
         Form father = null;
         String userId = null;
@@ -100,7 +101,9 @@ namespace ManagerClient
             }
         }
 
-        private void button_reset_password_Click(object sender, EventArgs e)
+
+
+        private void uiButton_reset_password_Click(object sender, EventArgs e)
         {
             //doPasswordChange();
             if (newPassword == null || checkPassword == null || userPassword == null)
@@ -108,15 +111,15 @@ namespace ManagerClient
                 MessageBox.Show("请先输入信息");
                 return;
             }
-            if(!oldPassword.Equals(userPassword))
+            if (!oldPassword.Equals(userPassword))
             {
                 MessageBox.Show("原密码输入错误");
                 return;
             }
-            if(newPassword.Equals(checkPassword))
+            if (newPassword.Equals(checkPassword))
             {
                 ManagerService mg = new ManagerService();
-                if(mg.doPasswordChange(newPassword, userId))
+                if (mg.doPasswordChange(newPassword, userId))
                     MessageBox.Show("密码修改成功");
                 else
                     MessageBox.Show("密码修改失败");
@@ -126,6 +129,16 @@ namespace ManagerClient
                 MessageBox.Show("两次密码输入不一致");
                 return;
             }
+        }
+
+        private void uiButton_clear_Click(object sender, EventArgs e)
+        {
+            textBox_check_password.Text = "";
+            textBox_new_password.Text = "";
+            textBox_password.Text = "";
+            label_reset_password_tip1.Text = "*";
+            label_reset_password_tip2.Text = "*";
+            label_reset_password_tip3.Text = "*";
         }
     }
 }
