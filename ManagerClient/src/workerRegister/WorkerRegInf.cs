@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WorkerClient.src.workerRegister
 {
-    class WorkerRegInf
+    public class WorkerRegInf
     {
         private int id;
         private String workerRegName;
@@ -34,15 +34,16 @@ namespace WorkerClient.src.workerRegister
             this.workerRegTel = workerRegTel;
         }
 
-        public string WorkerRegTel { get => workerRegTel; set => workerRegTel = value; }
-        public string WorkerRegAddr { get => workerRegAddr; set => workerRegAddr = value; }
-        public int WorkerRegEdu { get => workerRegEdu; set => workerRegEdu = value; }
-        public string WorkerRegHomeAddr { get => workerRegHomeAddr; set => workerRegHomeAddr = value; }
-        public string WorkerRegBirth { get => workerRegBirth; set => workerRegBirth = value; }
-        public int WorkerRegSex { get => workerRegSex; set => workerRegSex = value; }
-        public string WorkerRegPassword { get => workerRegPassword; set => workerRegPassword = value; }
-        public string WorkerRegName { get => workerRegName; set => workerRegName = value; }
         public int Id { get => id; set => id = value; }
+        public string WorkerRegName { get => workerRegName; set => workerRegName = value; }
+        public string WorkerRegPassword { get => workerRegPassword; set => workerRegPassword = value; }
+        public int WorkerRegSex { get => workerRegSex; set => workerRegSex = value; }
+        public string WorkerRegBirth { get => workerRegBirth; set => workerRegBirth = value; }
+        public string WorkerRegHomeAddr { get => workerRegHomeAddr; set => workerRegHomeAddr = value; }
+        public int WorkerRegEdu { get => workerRegEdu; set => workerRegEdu = value; }
+        public string WorkerRegAddr { get => workerRegAddr; set => workerRegAddr = value; }
+        public string WorkerRegTel { get => workerRegTel; set => workerRegTel = value; }
+
 
         public override bool Equals(object obj)
         {

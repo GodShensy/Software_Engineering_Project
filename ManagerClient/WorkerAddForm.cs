@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using WorkerClient.src.workerRegister;
 using WorkerClient.src.workers;
 
 namespace ManagerClient
@@ -17,6 +18,7 @@ namespace ManagerClient
         List<WorkerInf> workerInfs = null;
         String workerNumberNew = "";
         int[] flag_nums = null;
+        Boolean workerType = false;
         public WorkerAddForm()
         {
             InitializeComponent();
@@ -32,6 +34,33 @@ namespace ManagerClient
             flag_nums = new int[8];
             for (int i = 0; i < 8; i++)
                 flag_nums[i] = 0;
+        }
+
+        public void InfoSet(WorkerRegInf inf)
+        {
+            textBox_worker_name.Text = inf.WorkerRegName;
+            textBox_worker_tel.Text = inf.WorkerRegTel;
+            textBox_worker_password.Text = inf.WorkerRegPassword;
+            textBox_worker_homeAddr.Text = inf.WorkerRegHomeAddr;
+            textBox_addr.Text = inf.WorkerRegAddr;
+            radioButton_man.Checked = (inf.WorkerRegSex == 1 ? true : false);
+            radioButton_female.Checked = (inf.WorkerRegSex == 0 ? true : false);
+            dateTimePicker_worker_birth.Value = DateTime.Parse(inf.WorkerRegBirth);
+            comboBox_worker_edu.SelectedIndex = inf.WorkerRegEdu;
+            workerType = true;
+        }
+
+        public void SetWorkerNumberTab()
+        {
+            WorkerService service = new WorkerService();
+            String sql = "select * from workertab;";
+            String[] parms = { };
+            workerInfs = service.selelectWorkerInf(sql , parms);
+        }
+
+        public Boolean getWorkerType()
+        {
+            return workerType;
         }
 
         //todo: 获取数据库已有工号，这里将父类的数据表传过来
@@ -228,6 +257,7 @@ namespace ManagerClient
             if (cnt <= 0)
             {
                 MessageBox.Show("插入失败");
+                workerType = false;
             }
             else
             {

@@ -80,7 +80,7 @@ namespace ManagerClient
             this.button_log.Location = new System.Drawing.Point(58, 206);
             this.button_log.Margin = new System.Windows.Forms.Padding(2);
             this.button_log.Name = "button_log";
-            this.button_log.Size = new System.Drawing.Size(65, 26);
+            this.button_log.Size = new System.Drawing.Size(77, 26);
             this.button_log.TabIndex = 4;
             this.button_log.Text = "登陆";
             this.button_log.UseVisualStyleBackColor = true;
@@ -92,9 +92,9 @@ namespace ManagerClient
             this.button_quit.Location = new System.Drawing.Point(218, 206);
             this.button_quit.Margin = new System.Windows.Forms.Padding(2);
             this.button_quit.Name = "button_quit";
-            this.button_quit.Size = new System.Drawing.Size(62, 27);
+            this.button_quit.Size = new System.Drawing.Size(77, 27);
             this.button_quit.TabIndex = 5;
-            this.button_quit.Text = "退出";
+            this.button_quit.Text = "员工注册";
             this.button_quit.UseVisualStyleBackColor = true;
             this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
             // 

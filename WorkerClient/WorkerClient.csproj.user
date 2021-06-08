@@ -7,5 +7,8 @@
     <Compile Update="MainFrom.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="RegFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

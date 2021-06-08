@@ -18,6 +18,7 @@ namespace ManagerClient
         PasswordForm passwordForm = null;
         InfoForm infoForm = null;
         RecForm recForm = null;
+        ApplyForm applyForm = null;
         SignForm signForm = null;
         String managerId = null;
         String managerPassword = null;
@@ -54,6 +55,11 @@ namespace ManagerClient
             {
                 signForm.Dispose();
                 signForm = null;
+            }
+            if(applyForm != null)
+            {
+                applyForm.Dispose();
+                applyForm = null;
             }
         }
 
@@ -122,6 +128,18 @@ namespace ManagerClient
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void toolStripMenuItem_regin_Click(object sender, EventArgs e)
+        {
+            closeSonForm();
+            if (applyForm == null)
+                applyForm = new ApplyForm(this);
+            applyForm.TopLevel = false;
+            applyForm.WindowState = FormWindowState.Maximized;
+            applyForm.FormBorderStyle = FormBorderStyle.None;
+            applyForm.Parent = this.panelForm;
+            applyForm.Show();
         }
     }
 }

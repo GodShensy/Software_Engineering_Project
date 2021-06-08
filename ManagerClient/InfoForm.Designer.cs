@@ -35,26 +35,26 @@ namespace ManagerClient
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.uiDataGridView_worker = new Sunny.UI.UIDataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uiButton_showData = new Sunny.UI.UIButton();
             this.uiButton_clearInfo = new Sunny.UI.UIButton();
             this.uiButton_SelectInfo = new Sunny.UI.UIButton();
             this.uiButton_infoSave = new Sunny.UI.UIButton();
             this.uiButton_readInfo = new Sunny.UI.UIButton();
             this.uiButton_Add = new Sunny.UI.UIButton();
+            this.workerNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerHomeAddr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerEdu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerLv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerJoinTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerBaseRec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerAddr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView_worker)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,19 +75,19 @@ namespace ManagerClient
             this.uiDataGridView_worker.ColumnHeadersHeight = 32;
             this.uiDataGridView_worker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.uiDataGridView_worker.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.workerNumber,
+            this.workerPassword,
             this.workerName,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
+            this.workerSex,
+            this.workerBirth,
+            this.workerHomeAddr,
+            this.workerEdu,
+            this.workerLv,
+            this.workerTime,
+            this.workerJoinTime,
+            this.workerBaseRec,
+            this.workerAddr,
+            this.workerTel,
             this.id});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -118,92 +118,9 @@ namespace ManagerClient
             this.uiDataGridView_worker.Size = new System.Drawing.Size(792, 400);
             this.uiDataGridView_worker.Style = Sunny.UI.UIStyle.Custom;
             this.uiDataGridView_worker.TabIndex = 7;
+            this.uiDataGridView_worker.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiDataGridView_worker_CellContentDoubleClick);
             this.uiDataGridView_worker.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiDataGridView_worker_CellEndEdit);
             this.uiDataGridView_worker.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uiDataGridView_worker_ColumnHeaderMouseClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "workerNumber";
-            this.dataGridViewTextBoxColumn1.HeaderText = "工号";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "workerPassword";
-            this.dataGridViewTextBoxColumn2.HeaderText = "密码";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // workerName
-            // 
-            this.workerName.DataPropertyName = "workerName";
-            this.workerName.HeaderText = "姓名";
-            this.workerName.Name = "workerName";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "workerSex";
-            this.dataGridViewTextBoxColumn3.HeaderText = "性别 *";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "workerBirth";
-            this.dataGridViewTextBoxColumn4.HeaderText = "生日 *";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "workerHomeAddr";
-            this.dataGridViewTextBoxColumn5.HeaderText = "籍贯";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "workerEdu";
-            this.dataGridViewTextBoxColumn6.HeaderText = "学历 *";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "workerLv";
-            this.dataGridViewTextBoxColumn7.HeaderText = "等级 *";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "workerTime";
-            this.dataGridViewTextBoxColumn8.HeaderText = "工龄 *";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "workerJoinTime";
-            this.dataGridViewTextBoxColumn9.HeaderText = "加入时间 *";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "workerBaseRec";
-            this.dataGridViewTextBoxColumn10.HeaderText = "基本收入 *";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "workerAdd";
-            this.dataGridViewTextBoxColumn11.HeaderText = "现居住地";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "workerTel";
-            this.dataGridViewTextBoxColumn12.HeaderText = "电话";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
             // 
             // uiButton_showData
             // 
@@ -283,6 +200,91 @@ namespace ManagerClient
             this.uiButton_Add.Text = "Add";
             this.uiButton_Add.Click += new System.EventHandler(this.uiButton_Add_Click);
             // 
+            // workerNumber
+            // 
+            this.workerNumber.DataPropertyName = "workerNumber";
+            this.workerNumber.HeaderText = "工号";
+            this.workerNumber.Name = "workerNumber";
+            this.workerNumber.ReadOnly = true;
+            // 
+            // workerPassword
+            // 
+            this.workerPassword.DataPropertyName = "workerPassword";
+            this.workerPassword.HeaderText = "密码";
+            this.workerPassword.Name = "workerPassword";
+            // 
+            // workerName
+            // 
+            this.workerName.DataPropertyName = "workerName";
+            this.workerName.HeaderText = "姓名";
+            this.workerName.Name = "workerName";
+            // 
+            // workerSex
+            // 
+            this.workerSex.DataPropertyName = "workerSex";
+            this.workerSex.HeaderText = "性别 *";
+            this.workerSex.Name = "workerSex";
+            // 
+            // workerBirth
+            // 
+            this.workerBirth.DataPropertyName = "workerBirth";
+            this.workerBirth.HeaderText = "生日 *";
+            this.workerBirth.Name = "workerBirth";
+            // 
+            // workerHomeAddr
+            // 
+            this.workerHomeAddr.DataPropertyName = "workerHomeAddr";
+            this.workerHomeAddr.HeaderText = "籍贯";
+            this.workerHomeAddr.Name = "workerHomeAddr";
+            // 
+            // workerEdu
+            // 
+            this.workerEdu.DataPropertyName = "workerEdu";
+            this.workerEdu.HeaderText = "学历 *";
+            this.workerEdu.Name = "workerEdu";
+            // 
+            // workerLv
+            // 
+            this.workerLv.DataPropertyName = "workerLv";
+            this.workerLv.HeaderText = "等级 *";
+            this.workerLv.Name = "workerLv";
+            // 
+            // workerTime
+            // 
+            this.workerTime.DataPropertyName = "workerTime";
+            this.workerTime.HeaderText = "工龄 *";
+            this.workerTime.Name = "workerTime";
+            // 
+            // workerJoinTime
+            // 
+            this.workerJoinTime.DataPropertyName = "workerJoinTime";
+            this.workerJoinTime.HeaderText = "加入时间 *";
+            this.workerJoinTime.Name = "workerJoinTime";
+            // 
+            // workerBaseRec
+            // 
+            this.workerBaseRec.DataPropertyName = "workerBaseRec";
+            this.workerBaseRec.HeaderText = "基本收入 *";
+            this.workerBaseRec.Name = "workerBaseRec";
+            // 
+            // workerAddr
+            // 
+            this.workerAddr.DataPropertyName = "workerAdd";
+            this.workerAddr.HeaderText = "现居住地";
+            this.workerAddr.Name = "workerAddr";
+            // 
+            // workerTel
+            // 
+            this.workerTel.DataPropertyName = "workerTel";
+            this.workerTel.HeaderText = "电话";
+            this.workerTel.Name = "workerTel";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
             // InfoForm
             // 
             this.AllowShowTitle = false;
@@ -318,25 +320,25 @@ namespace ManagerClient
 
         #endregion
         private Sunny.UI.UIDataGridView uiDataGridView_worker;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn workerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private Sunny.UI.UIButton uiButton_showData;
         private Sunny.UI.UIButton uiButton_clearInfo;
         private Sunny.UI.UIButton uiButton_SelectInfo;
         private Sunny.UI.UIButton uiButton_infoSave;
         private Sunny.UI.UIButton uiButton_readInfo;
         private Sunny.UI.UIButton uiButton_Add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerPassword;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerSex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerBirth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerHomeAddr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerEdu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerLv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerJoinTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerBaseRec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerAddr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }

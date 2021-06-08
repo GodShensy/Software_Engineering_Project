@@ -37,6 +37,7 @@ namespace ManagerClient
             this.menu_btn_quit = new System.Windows.Forms.ToolStripMenuItem();
             this.panelForm = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.toolStripMenuItem_regin = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +51,7 @@ namespace ManagerClient
             this.ToolStripMenuItem_rec,
             this.menu_btn_reset_password,
             this.toolStripMenuItem_signManage,
+            this.toolStripMenuItem_regin,
             this.menu_btn_quit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -111,6 +113,13 @@ namespace ManagerClient
             this.panel1.Size = new System.Drawing.Size(816, 495);
             this.panel1.TabIndex = 2;
             // 
+            // toolStripMenuItem_regin
+            // 
+            this.toolStripMenuItem_regin.Name = "toolStripMenuItem_regin";
+            this.toolStripMenuItem_regin.Size = new System.Drawing.Size(65, 24);
+            this.toolStripMenuItem_regin.Text = "入职申请";
+            this.toolStripMenuItem_regin.Click += new System.EventHandler(this.toolStripMenuItem_regin_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -141,5 +150,6 @@ namespace ManagerClient
         private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_signManage;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_regin;
     }
 }

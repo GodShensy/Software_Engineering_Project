@@ -4,6 +4,9 @@
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="ApplyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -20,6 +23,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="RecForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RegFrom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="SelectFrom.cs">

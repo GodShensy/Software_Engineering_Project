@@ -104,9 +104,9 @@ namespace WorkerClient.src.workers
                     cmd.Parameters.AddWithValue("pair" + i.ToString(), parms[i]);
                 }
                 MySqlDataReader reader = cmd.ExecuteReader();
-                WorkerInf e = new WorkerInf();
                 while (reader.Read())
                 {
+                    WorkerInf e = new WorkerInf();
                     e.WorkerNumber = reader.GetString("workerNumber");
                     e.WorkerPassword = reader.GetString("workerPassword");
                     e.WorkerName = reader.GetString("workerName");
@@ -121,8 +121,8 @@ namespace WorkerClient.src.workers
                     e.WorkerBaseRec = reader.GetFloat("workerBaseRec");
                     e.WorkerHomeAddr = reader.GetString("workerAddr");
                     e.WorkerTel = reader.GetString("workerTel");
+                    rs.Add(e);
                 }
-                rs.Add(e);
             }
             catch (MySqlException e)
             {
@@ -149,6 +149,15 @@ namespace WorkerClient.src.workers
             return false;
         }
 
+        public int doDeleteById(String userId)
+        {
+            String[] parms =
+            {
+                userId
+            };
+            String sql = "delete from workertab where workerNumber = @pair0;";
+            return MysqlConnectorHelper.exectUID(sql, parms);
+        }
         public int doWorkerInfoChangeByItem(String itemName , String value , String userId)
         {
             // 插入一个

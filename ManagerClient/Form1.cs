@@ -13,6 +13,7 @@ using MaterialSkin.Controls;
 using Sunny;
 using Sunny.UI;
 using WorkerClient.src.workers;
+using WorkerClient;
 
 namespace ManagerClient
 {
@@ -86,7 +87,11 @@ namespace ManagerClient
 
         private void button_quit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            RegFrom regFrom = new RegFrom();
+            // closeSonForm();
+            regFrom.ShowDialog();
+
         }
 
         private void uiCheckBox_isMannager_CheckedChanged(object sender, EventArgs e)
